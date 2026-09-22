@@ -19,6 +19,11 @@ $routes->get('/checkout/sucesso/(:num)', 'Checkout::sucesso/$1', ['filter' => 'a
 $routes->get('/meus-pedidos', 'Pedidos::index', ['filter' => 'auth']);
 $routes->get('/meus-pedidos/(:num)', 'Pedidos::detalhe/$1', ['filter' => 'auth']);
 
+$routes->get('/perfil', 'Perfil::index', ['filter' => 'auth']);
+$routes->post('/perfil/atualizar', 'Perfil::atualizar', ['filter' => 'auth']);
+$routes->get('/perfil/senha', 'Perfil::senha', ['filter' => 'auth']);
+$routes->post('/perfil/senha/salvar', 'Perfil::salvarSenha', ['filter' => 'auth']);
+
 $routes->get('/cadastro', 'Auth::cadastro');
 $routes->post('/cadastro/salvar', 'Auth::salvarCadastro');
 $routes->get('/login', 'Auth::login');
