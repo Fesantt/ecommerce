@@ -13,6 +13,12 @@ $routes->post('/carrinho/adicionar', 'Carrinho::adicionar');
 $routes->post('/carrinho/atualizar/(:num)', 'Carrinho::atualizar/$1');
 $routes->post('/carrinho/remover/(:num)', 'Carrinho::remover/$1');
 
+$routes->get('/checkout', 'Checkout::index', ['filter' => 'auth']);
+$routes->post('/checkout/confirmar', 'Checkout::confirmar', ['filter' => 'auth']);
+$routes->get('/checkout/sucesso/(:num)', 'Checkout::sucesso/$1', ['filter' => 'auth']);
+$routes->get('/meus-pedidos', 'Pedidos::index', ['filter' => 'auth']);
+$routes->get('/meus-pedidos/(:num)', 'Pedidos::detalhe/$1', ['filter' => 'auth']);
+
 $routes->get('/cadastro', 'Auth::cadastro');
 $routes->post('/cadastro/salvar', 'Auth::salvarCadastro');
 $routes->get('/login', 'Auth::login');

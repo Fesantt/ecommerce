@@ -19,6 +19,7 @@
                 </a>
                 <?php if (session()->get('usuario_id')): ?>
                     <span class="menu-usuario"><?= esc(session()->get('usuario_nome')) ?></span>
+                    <a href="<?= base_url('/meus-pedidos') ?>">Meus pedidos</a>
                     <a href="<?= base_url('/conta/senha') ?>">Trocar senha</a>
                     <a href="<?= base_url('/logout') ?>">Sair</a>
                 <?php else: ?>
