@@ -44,9 +44,15 @@ Acesse <http://localhost:8080>.
 | `base`              | Instalação base do CodeIgniter 4 (padrão)           | `docs/`      |
 | `autenticacao`      | Cadastro, login, logout e recuperação de senha      | [docs/autenticacao.md](docs/autenticacao.md) |
 | `crud-categorias`   | CRUD de categorias                                  | [docs/crud-categorias.md](docs/crud-categorias.md) |
-| `crud-produtos`     | CRUD de produtos                                    | [docs/crud-produtos.md](docs/crud-produtos.md) |
+| `crud-produtos`     | CRUD de produtos (admin)                            | [docs/crud-produtos.md](docs/crud-produtos.md) |
+| `catalogo`          | Vitrine pública, detalhe e listagem por categoria   | [docs/catalogo.md](docs/catalogo.md) |
+| `busca-produtos`    | Busca por texto e filtro de categoria               | [docs/busca-produtos.md](docs/busca-produtos.md) |
 | `carrinho`          | Carrinho de compras                                 | [docs/carrinho.md](docs/carrinho.md) |
 | `checkout`          | Finalização de compra e pedidos                     | [docs/checkout.md](docs/checkout.md) |
+| `perfil-usuario`    | Meus dados e troca de senha                         | [docs/perfil-usuario.md](docs/perfil-usuario.md) |
+| `admin-usuarios`    | Gestão de usuários (admin)                          | [docs/admin-usuarios.md](docs/admin-usuarios.md) |
+| `admin-pedidos`     | Gestão de pedidos (admin)                           | [docs/admin-pedidos.md](docs/admin-pedidos.md) |
+| `dashboard-admin`   | Painel administrativo com resumo da loja            | [docs/dashboard-admin.md](docs/dashboard-admin.md) |
 
 Cada branch parte da base e contém apenas a **tarefa documentada**: o código do módulo é desenvolvido pelo aluno.
 
