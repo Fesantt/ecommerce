@@ -18,6 +18,9 @@
                     <?php endif; ?>
                 </a>
                 <?php if (session()->get('usuario_id')): ?>
+                    <?php if (session()->get('perfil') === 'admin'): ?>
+                        <a class="menu-admin-link" href="<?= base_url('/admin') ?>">Administrar</a>
+                    <?php endif; ?>
                     <span class="menu-usuario"><?= esc(session()->get('usuario_nome')) ?></span>
                     <a href="<?= base_url('/meus-pedidos') ?>">Meus pedidos</a>
                     <a href="<?= base_url('/perfil') ?>">Meu perfil</a>

@@ -65,3 +65,5 @@ $routes->group('admin/pedidos', ['filter' => 'admin'], function ($routes) {
     $routes->get('detalhe/(:num)', 'Pedidos::detalhe/$1');
     $routes->post('status/(:num)', 'Pedidos::status/$1');
 });
+
+$routes->get('/admin', 'Dashboard::index', ['filter' => 'admin']);
