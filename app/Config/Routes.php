@@ -33,37 +33,37 @@ $routes->get('/conta/senha', 'Auth::trocarSenha', ['filter' => 'auth']);
 $routes->post('/conta/senha/salvar', 'Auth::salvarSenha', ['filter' => 'auth']);
 
 $routes->group('admin/categorias', ['filter' => 'admin'], function ($routes) {
-    $routes->get('/', 'Categorias::index');
-    $routes->get('novo', 'Categorias::novo');
-    $routes->post('salvar', 'Categorias::salvar');
-    $routes->get('editar/(:num)', 'Categorias::editar/$1');
-    $routes->post('atualizar/(:num)', 'Categorias::atualizar/$1');
-    $routes->post('excluir/(:num)', 'Categorias::excluir/$1');
+    $routes->get('/', 'Admin\Categorias::index');
+    $routes->get('novo', 'Admin\Categorias::novo');
+    $routes->post('salvar', 'Admin\Categorias::salvar');
+    $routes->get('editar/(:num)', 'Admin\Categorias::editar/$1');
+    $routes->post('atualizar/(:num)', 'Admin\Categorias::atualizar/$1');
+    $routes->post('excluir/(:num)', 'Admin\Categorias::excluir/$1');
 });
 
 $routes->group('admin/produtos', ['filter' => 'admin'], function ($routes) {
-    $routes->get('/', 'Produtos::index');
-    $routes->get('novo', 'Produtos::novo');
-    $routes->post('salvar', 'Produtos::salvar');
-    $routes->get('editar/(:num)', 'Produtos::editar/$1');
-    $routes->post('atualizar/(:num)', 'Produtos::atualizar/$1');
-    $routes->post('excluir/(:num)', 'Produtos::excluir/$1');
+    $routes->get('/', 'Admin\Produtos::index');
+    $routes->get('novo', 'Admin\Produtos::novo');
+    $routes->post('salvar', 'Admin\Produtos::salvar');
+    $routes->get('editar/(:num)', 'Admin\Produtos::editar/$1');
+    $routes->post('atualizar/(:num)', 'Admin\Produtos::atualizar/$1');
+    $routes->post('excluir/(:num)', 'Admin\Produtos::excluir/$1');
 });
 
 $routes->group('admin/usuarios', ['filter' => 'admin'], function ($routes) {
-    $routes->get('/', 'Usuarios::index');
-    $routes->get('novo', 'Usuarios::novo');
-    $routes->post('salvar', 'Usuarios::salvar');
-    $routes->get('editar/(:num)', 'Usuarios::editar/$1');
-    $routes->post('atualizar/(:num)', 'Usuarios::atualizar/$1');
-    $routes->post('desativar/(:num)', 'Usuarios::desativar/$1');
-    $routes->post('ativar/(:num)', 'Usuarios::ativar/$1');
+    $routes->get('/', 'Admin\Usuarios::index');
+    $routes->get('novo', 'Admin\Usuarios::novo');
+    $routes->post('salvar', 'Admin\Usuarios::salvar');
+    $routes->get('editar/(:num)', 'Admin\Usuarios::editar/$1');
+    $routes->post('atualizar/(:num)', 'Admin\Usuarios::atualizar/$1');
+    $routes->post('desativar/(:num)', 'Admin\Usuarios::desativar/$1');
+    $routes->post('ativar/(:num)', 'Admin\Usuarios::ativar/$1');
 });
 
 $routes->group('admin/pedidos', ['filter' => 'admin'], function ($routes) {
-    $routes->get('/', 'Pedidos::index');
-    $routes->get('detalhe/(:num)', 'Pedidos::detalhe/$1');
-    $routes->post('status/(:num)', 'Pedidos::status/$1');
+    $routes->get('/', 'Admin\Pedidos::index');
+    $routes->get('detalhe/(:num)', 'Admin\Pedidos::detalhe/$1');
+    $routes->post('status/(:num)', 'Admin\Pedidos::status/$1');
 });
 
-$routes->get('/admin', 'Dashboard::index', ['filter' => 'admin']);
+$routes->get('/admin', 'Admin\Dashboard::index', ['filter' => 'admin']);
