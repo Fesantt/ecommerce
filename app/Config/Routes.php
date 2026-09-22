@@ -8,6 +8,11 @@ $routes->get('produto/(:segment)', 'Catalogo::detalhe/$1');
 $routes->get('categoria/(:segment)', 'Catalogo::categoria/$1');
 $routes->get('busca', 'Catalogo::busca');
 
+$routes->get('/carrinho', 'Carrinho::index');
+$routes->post('/carrinho/adicionar', 'Carrinho::adicionar');
+$routes->post('/carrinho/atualizar/(:num)', 'Carrinho::atualizar/$1');
+$routes->post('/carrinho/remover/(:num)', 'Carrinho::remover/$1');
+
 $routes->get('/cadastro', 'Auth::cadastro');
 $routes->post('/cadastro/salvar', 'Auth::salvarCadastro');
 $routes->get('/login', 'Auth::login');

@@ -435,3 +435,41 @@ h1 {
 .produto-info p {
     margin-bottom: 12px;
 }
+
+.menu-carrinho {
+    font-weight: 700;
+}
+
+.menu-carrinho-contador {
+    display: inline-block;
+    background: #e63946;
+    color: #fff;
+    border-radius: 999px;
+    padding: 1px 7px;
+    font-size: 0.75rem;
+    margin-left: 4px;
+}
+
+.form-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.form-quantidade input {
+    width: 80px;
+    padding: 7px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+.total-carrinho {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.form-adicionar {
+    margin-top: 8px;
+    max-width: 280px;
+}

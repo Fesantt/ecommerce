@@ -11,6 +11,12 @@
         <div class="container topo-inner">
             <a class="logo" href="<?= base_url('/') ?>">Loja Virtual</a>
             <nav class="menu">
+                <a class="menu-carrinho" href="<?= base_url('/carrinho') ?>">Carrinho
+                    <?php $carrinho = session()->get('carrinho') ?? []; $itensCarrinho = array_sum(array_column($carrinho, 'quantidade')); ?>
+                    <?php if ($itensCarrinho > 0): ?>
+                        <span class="menu-carrinho-contador"><?= $itensCarrinho ?></span>
+                    <?php endif; ?>
+                </a>
                 <?php if (session()->get('usuario_id')): ?>
                     <span class="menu-usuario"><?= esc(session()->get('usuario_nome')) ?></span>
                     <a href="<?= base_url('/conta/senha') ?>">Trocar senha</a>

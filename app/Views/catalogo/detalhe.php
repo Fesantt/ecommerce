@@ -28,6 +28,14 @@
         <?php if (! empty($produto['descricao'])): ?>
             <p><?= esc($produto['descricao']) ?></p>
         <?php endif; ?>
+
+        <?php if ((int) $produto['quantidade'] > 0): ?>
+            <?= form_open('carrinho/adicionar', ['class' => 'form-quantidade form-adicionar']) ?>
+                <input type="hidden" name="produto_id" value="<?= $produto['id'] ?>">
+                <input type="number" name="quantidade" min="1" max="<?= $produto['quantidade'] ?>" value="1" required>
+                <button type="submit" class="botao">Adicionar ao carrinho</button>
+            <?= form_close() ?>
+        <?php endif; ?>
     </div>
 </div>
 
