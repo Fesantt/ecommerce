@@ -61,6 +61,9 @@ Vagrantfile
 !/writable/uploads/index.html
 
 /writable/debugbar/*
+
+/public/uploads/*
+!/public/uploads/index.html
 !/writable/debugbar/index.html
 
 php_errors.log

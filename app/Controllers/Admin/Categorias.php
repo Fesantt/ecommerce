@@ -120,6 +120,12 @@ class Categorias extends BaseController
             return redirect()->to('/admin/categorias')->with('erro', 'Categoria não encontrada.');
         }
 
+        $emUso = db_connect()->table('produtos')->where('categoria_id', $id)->countAllResults();
+
+        if ($emUso > 0) {
+            return redirect()->to('/admin/categorias')->with('erro', 'Esta categoria possui produtos e não pode ser excluida.');
+        }
+
         $model->delete($id);
 
         return redirect()->to('/admin/categorias')->with('sucesso', 'Categoria excluida.');

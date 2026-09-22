@@ -21,3 +21,12 @@ $routes->group('admin/categorias', ['filter' => 'admin'], function ($routes) {
     $routes->post('atualizar/(:num)', 'Categorias::atualizar/$1');
     $routes->post('excluir/(:num)', 'Categorias::excluir/$1');
 });
+
+$routes->group('admin/produtos', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Produtos::index');
+    $routes->get('novo', 'Produtos::novo');
+    $routes->post('salvar', 'Produtos::salvar');
+    $routes->get('editar/(:num)', 'Produtos::editar/$1');
+    $routes->post('atualizar/(:num)', 'Produtos::atualizar/$1');
+    $routes->post('excluir/(:num)', 'Produtos::excluir/$1');
+});
