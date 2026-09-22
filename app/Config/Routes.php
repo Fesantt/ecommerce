@@ -59,3 +59,9 @@ $routes->group('admin/usuarios', ['filter' => 'admin'], function ($routes) {
     $routes->post('desativar/(:num)', 'Usuarios::desativar/$1');
     $routes->post('ativar/(:num)', 'Usuarios::ativar/$1');
 });
+
+$routes->group('admin/pedidos', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Pedidos::index');
+    $routes->get('detalhe/(:num)', 'Pedidos::detalhe/$1');
+    $routes->post('status/(:num)', 'Pedidos::status/$1');
+});

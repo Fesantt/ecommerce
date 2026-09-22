@@ -478,3 +478,23 @@ h1 {
     display: inline-block;
     margin: 0;
 }
+
+.box-status {
+    background: #eef2f7;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.box-status label {
+    font-weight: 600;
+}
+
+.box-status select {
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
