@@ -12,3 +12,12 @@ $routes->post('/login/salvar', 'Auth::salvarLogin');
 $routes->get('/logout', 'Auth::logout');
 $routes->get('/conta/senha', 'Auth::trocarSenha', ['filter' => 'auth']);
 $routes->post('/conta/senha/salvar', 'Auth::salvarSenha', ['filter' => 'auth']);
+
+$routes->group('admin/categorias', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Categorias::index');
+    $routes->get('novo', 'Categorias::novo');
+    $routes->post('salvar', 'Categorias::salvar');
+    $routes->get('editar/(:num)', 'Categorias::editar/$1');
+    $routes->post('atualizar/(:num)', 'Categorias::atualizar/$1');
+    $routes->post('excluir/(:num)', 'Categorias::excluir/$1');
+});
