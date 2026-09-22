@@ -6,7 +6,15 @@ O código-fonte da base **não contém comentários**: toda a orientação está
 
 ## Visão geral
 
-O projeto entrega apenas a estrutura base do CodeIgniter 4 (instalação limpa, sem regras de negócio). A partir daqui, cada módulo do e-commerce é desenvolvido pelos alunos através de **branches de estudo**, cada uma com sua documentação de tarefa.
+O projeto entrega a estrutura base do CodeIgniter 4 (instalação limpa, sem regras de negócio) e, em cada **branch de estudo**, o módulo correspondente **já implementado** — servindo de referência/solução — além da documentação da tarefa. Os alunos reconstroem o módulo a partir da `base`. As branches seguem ordem de dependência:
+
+```
+base → autenticacao → crud-categorias → crud-produtos → catalogo
+     → busca-produtos → carrinho → checkout → perfil-usuario
+     → admin-usuarios → admin-pedidos → dashboard-admin
+```
+
+Cada branch contém todos os módulos anteriores (a aplicação é sempre funcional).
 
 ## Requisitos
 
@@ -35,7 +43,19 @@ php spark serve
 
 Acesse <http://localhost:8080>.
 
-> Consulte [docs/01-ambiente.md](docs/01-ambiente.md) para o passo a passo completo.
+## Bancos de dados e dados iniciais
+
+```bash
+# aplicar as migracoes (cria todas as tabelas da base + modulo da branch)
+php spark migrate
+
+# opcional: dados de exemplo (admin@ecommerce.test / 123456)
+php spark db:seed UsuarioSeeder
+php spark db:seed CategoriaSeeder
+php spark db:seed ProdutoSeeder
+```
+
+> Consulte [docs/01-ambiente.md](docs/01-ambiente.md) e [docs/04-banco-de-dados.md](docs/04-banco-de-dados.md).
 
 ## Estrutura de branches
 
@@ -54,7 +74,7 @@ Acesse <http://localhost:8080>.
 | `admin-pedidos`     | Gestão de pedidos (admin)                           | [docs/admin-pedidos.md](docs/admin-pedidos.md) |
 | `dashboard-admin`   | Painel administrativo com resumo da loja            | [docs/dashboard-admin.md](docs/dashboard-admin.md) |
 
-Cada branch parte da base e contém apenas a **tarefa documentada**: o código do módulo é desenvolvido pelo aluno.
+Cada branch traz o módulo **implementado e funcional** (referência/solução) mais a documentação da tarefa em `docs/`. A `base` fica limpa, para os alunos reproduzirem o percurso.
 
 ## Documentação
 
