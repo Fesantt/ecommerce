@@ -382,18 +382,30 @@ h1 {
 .nav-loja-inner {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 18px;
 }
 
-.nav-loja-inner a {
+.nav-loja-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.nav-loja-links a {
     color: #cfe0f5;
     text-decoration: none;
     font-size: 0.95rem;
 }
 
-.nav-loja-inner a:hover {
+.nav-loja-links a:hover {
     color: #fff;
     text-decoration: underline;
+}
+
+.nav-busca {
+    max-width: none;
+    margin: 0;
 }
 
 .produto-detalhe {

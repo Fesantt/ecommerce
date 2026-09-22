@@ -65,4 +65,41 @@ class Catalogo extends BaseController
 
         return view('catalogo/categoria', $dados);
     }
+
+    public function busca(): string
+    {
+        $termo = trim((string) $this->request->getGet('q'));
+        $categoriaId = (int) $this->request->getGet('categoria');
+
+        if ($categoriaId > 0 && ! $this->validate(['categoria' => 'is_not_unique[categorias.id]'])) {
+            $categoriaId = 0;
+        }
+
+        $model = new ProdutoModel();
+        $model->where('ativo', 1);
+
+        if ($termo !== '') {
+            $model->groupStart()
+                ->like('nome', $termo)
+                ->orLike('descricao', $termo)
+                ->groupEnd();
+        }
+
+        if ($categoriaId > 0) {
+            $model->where('categoria_id', $categoriaId);
+        }
+
+        $dados = [
+            'titulo'       => 'Busca: ' . ($termo !== '' ? $termo : 'todos'),
+            'produtos'     => $model->orderBy('id', 'DESC')->paginate(12),
+            'pager'        => $model->pager,
+            'categorias'   => (new CategoriaModel())->orderBy('nome', 'ASC')->findAll(),
+            'busca'        => $termo,
+            'categoriaAtual' => $categoriaId,
+        ];
+
+        $model->pager->only(['q', 'categoria']);
+
+        return view('catalogo/busca', $dados);
+    }
 }
