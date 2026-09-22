@@ -3,17 +3,20 @@
 ## Como o repositório está organizado
 
 - A branch padrão é a **`base`**, com a instalação limpa do CodeIgniter 4.
-- Cada módulo do curso mora em uma **branch própria**, criada a partir da `base`:
+- Cada módulo do curso mora em uma **branch própria**, construída em cadeia a partir da `base`:
 
 ```
-base  ← autenticacao
-      ← crud-categorias
-      ← crud-produtos
-      ← carrinho
-      ← checkout
+base → autenticacao → crud-categorias → crud-produtos → catalogo
+     → busca-produtos → carrinho → checkout → perfil-usuario
+     → admin-usuarios → admin-pedidos → dashboard-admin
 ```
 
-Cada branch de estudo contém **somente a documentação da tarefa** (`docs/`). O código do módulo deve ser desenvolvido por você.
+Cada branch de estudo contém o **módulo já implementado** (referência/solução) e a **documentação da tarefa** (`docs/`). As branches são cumulativas: a aplicação é sempre funcional, com todos os módulos anteriores.
+
+## Como usar na sala de aula
+
+- Para reproduzir um módulo do zero: partindo da `base`, peça aos alunos o entregável descrito em `docs/<tarefa>.md`.
+- Para usar como solução de referência: `git checkout <modulo>` e conferir a implementação.
 
 ## Fluxo de trabalho recomendado
 
