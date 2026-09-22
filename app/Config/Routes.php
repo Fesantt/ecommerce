@@ -3,4 +3,67 @@
 use CodeIgniter\Router\RouteCollection;
 
 
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Catalogo::index');
+$routes->get('produto/(:segment)', 'Catalogo::detalhe/$1');
+$routes->get('categoria/(:segment)', 'Catalogo::categoria/$1');
+$routes->get('busca', 'Catalogo::busca');
+
+$routes->get('/carrinho', 'Carrinho::index');
+$routes->post('/carrinho/adicionar', 'Carrinho::adicionar');
+$routes->post('/carrinho/atualizar/(:num)', 'Carrinho::atualizar/$1');
+$routes->post('/carrinho/remover/(:num)', 'Carrinho::remover/$1');
+
+$routes->get('/checkout', 'Checkout::index', ['filter' => 'auth']);
+$routes->post('/checkout/confirmar', 'Checkout::confirmar', ['filter' => 'auth']);
+$routes->get('/checkout/sucesso/(:num)', 'Checkout::sucesso/$1', ['filter' => 'auth']);
+$routes->get('/meus-pedidos', 'Pedidos::index', ['filter' => 'auth']);
+$routes->get('/meus-pedidos/(:num)', 'Pedidos::detalhe/$1', ['filter' => 'auth']);
+
+$routes->get('/perfil', 'Perfil::index', ['filter' => 'auth']);
+$routes->post('/perfil/atualizar', 'Perfil::atualizar', ['filter' => 'auth']);
+$routes->get('/perfil/senha', 'Perfil::senha', ['filter' => 'auth']);
+$routes->post('/perfil/senha/salvar', 'Perfil::salvarSenha', ['filter' => 'auth']);
+
+$routes->get('/cadastro', 'Auth::cadastro');
+$routes->post('/cadastro/salvar', 'Auth::salvarCadastro');
+$routes->get('/login', 'Auth::login');
+$routes->post('/login/salvar', 'Auth::salvarLogin');
+$routes->get('/logout', 'Auth::logout');
+$routes->get('/conta/senha', 'Auth::trocarSenha', ['filter' => 'auth']);
+$routes->post('/conta/senha/salvar', 'Auth::salvarSenha', ['filter' => 'auth']);
+
+$routes->group('admin/categorias', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Admin\Categorias::index');
+    $routes->get('novo', 'Admin\Categorias::novo');
+    $routes->post('salvar', 'Admin\Categorias::salvar');
+    $routes->get('editar/(:num)', 'Admin\Categorias::editar/$1');
+    $routes->post('atualizar/(:num)', 'Admin\Categorias::atualizar/$1');
+    $routes->post('excluir/(:num)', 'Admin\Categorias::excluir/$1');
+});
+
+$routes->group('admin/produtos', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Admin\Produtos::index');
+    $routes->get('novo', 'Admin\Produtos::novo');
+    $routes->post('salvar', 'Admin\Produtos::salvar');
+    $routes->get('editar/(:num)', 'Admin\Produtos::editar/$1');
+    $routes->post('atualizar/(:num)', 'Admin\Produtos::atualizar/$1');
+    $routes->post('excluir/(:num)', 'Admin\Produtos::excluir/$1');
+});
+
+$routes->group('admin/usuarios', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Admin\Usuarios::index');
+    $routes->get('novo', 'Admin\Usuarios::novo');
+    $routes->post('salvar', 'Admin\Usuarios::salvar');
+    $routes->get('editar/(:num)', 'Admin\Usuarios::editar/$1');
+    $routes->post('atualizar/(:num)', 'Admin\Usuarios::atualizar/$1');
+    $routes->post('desativar/(:num)', 'Admin\Usuarios::desativar/$1');
+    $routes->post('ativar/(:num)', 'Admin\Usuarios::ativar/$1');
+});
+
+$routes->group('admin/pedidos', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Admin\Pedidos::index');
+    $routes->get('detalhe/(:num)', 'Admin\Pedidos::detalhe/$1');
+    $routes->post('status/(:num)', 'Admin\Pedidos::status/$1');
+});
+
+$routes->get('/admin', 'Admin\Dashboard::index', ['filter' => 'admin']);
