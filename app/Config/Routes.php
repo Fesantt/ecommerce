@@ -49,3 +49,13 @@ $routes->group('admin/produtos', ['filter' => 'admin'], function ($routes) {
     $routes->post('atualizar/(:num)', 'Produtos::atualizar/$1');
     $routes->post('excluir/(:num)', 'Produtos::excluir/$1');
 });
+
+$routes->group('admin/usuarios', ['filter' => 'admin'], function ($routes) {
+    $routes->get('/', 'Usuarios::index');
+    $routes->get('novo', 'Usuarios::novo');
+    $routes->post('salvar', 'Usuarios::salvar');
+    $routes->get('editar/(:num)', 'Usuarios::editar/$1');
+    $routes->post('atualizar/(:num)', 'Usuarios::atualizar/$1');
+    $routes->post('desativar/(:num)', 'Usuarios::desativar/$1');
+    $routes->post('ativar/(:num)', 'Usuarios::ativar/$1');
+});

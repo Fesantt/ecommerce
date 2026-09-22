@@ -473,3 +473,8 @@ h1 {
     margin-top: 8px;
     max-width: 280px;
 }
+
+.form-inline {
+    display: inline-block;
+    margin: 0;
+}
