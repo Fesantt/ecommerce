@@ -373,3 +373,53 @@ h1 {
     border-radius: 10px;
     background: #eef2f7;
 }
+
+.nav-loja {
+    background: #14263d;
+    padding: 10px 0;
+}
+
+.nav-loja-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.nav-loja-inner a {
+    color: #cfe0f5;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-loja-inner a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.produto-detalhe {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.produto-detalhe .produto-foto {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto-detalhe .produto-foto img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.produto-info {
+    flex: 1;
+    min-width: 260px;
+}
+
+.produto-info p {
+    margin-bottom: 12px;
+}

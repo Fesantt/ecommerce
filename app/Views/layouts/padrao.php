@@ -21,6 +21,7 @@
                 <?php endif; ?>
             </nav>
         </div>
+        <?= $this->renderSection('navLoja') ?>
     </header>
 
     <?php if (session()->getFlashdata('sucesso')): ?>

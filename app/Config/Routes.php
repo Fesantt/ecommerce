@@ -3,7 +3,9 @@
 use CodeIgniter\Router\RouteCollection;
 
 
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Catalogo::index');
+$routes->get('produto/(:segment)', 'Catalogo::detalhe/$1');
+$routes->get('categoria/(:segment)', 'Catalogo::categoria/$1');
 
 $routes->get('/cadastro', 'Auth::cadastro');
 $routes->post('/cadastro/salvar', 'Auth::salvarCadastro');
