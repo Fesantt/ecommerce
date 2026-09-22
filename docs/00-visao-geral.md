@@ -15,18 +15,24 @@ Desenvolver um **e-commerce simples** para venda de produtos em uma loja virtual
 | Módulo                  | Descrição resumida                                           |
 |-------------------------|--------------------------------------------------------------|
 | Catálogo                | Listagem e detalhe de produtos públicos                      |
+| Busca de produtos       | Busca por texto e filtro de categoria na vitrine             |
 | Categorias              | Agrupamento de produtos                                      |
 | Autenticação            | Cadastro, login, logout e troca de senha                     |
+| Perfil do usuário       | Edição dos próprios dados                                    |
 | Carrinho                | Itens selecionados, quantidades e total                       |
 | Checkout                | Confirmação do pedido e registro de pedidos                  |
 | Produtos (admin)        | Cadastro, edição, exclusão e listagem de produtos            |
+| Usuários (admin)        | Gestão de contas e perfis de acesso                          |
+| Pedidos (admin)         | Acompanhamento e atualização de status dos pedidos           |
+| Dashboard (admin)       | Resumo de vendas, estoque e pedidos                          |
 
 ## Requisitos funcionais (visão geral)
 
-1. O visitante visualiza produtos e categorias sem estar logado.
+1. O visitante visualiza produtos, categorias e busca sem estar logado.
 2. Para fechar um pedido, o usuário deve estar logado.
-3. Um usuário administrador gerencia produtos e categorias.
+3. Um usuário administrador gerencia produtos, categorias, usuários e pedidos.
 4. O carrinho é mantido por usuário (na sessão).
+5. O usuário logado gerencia o próprio perfil e acompanha seus pedidos.
 
 ## Requisitos não funcionais
 

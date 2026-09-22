@@ -4,29 +4,21 @@ Branch de estudo: **`crud-produtos`**
 
 ## Objetivo
 
-Implementar o gerenciamento de produtos na área administrativa e a exibição pública do catálogo.
+Implementar o gerenciamento de produtos na área administrativa.
 
 ## O que você deve construir
-
-### Área administrativa
 
 1. **Listagem** de produtos com busca por nome e filtro por categoria.
 2. **Cadastro** com campos: nome, slug, categoria, descrição, preço, quantidade (estoque), imagem, destaque e ativo.
 3. **Edição** dos dados do produto.
 4. **Exclusão** com confirmação.
 
-### Loja (pública)
-
-5. **Vitrine** (`/`): listar produtos ativos, opcionalmente em destaque.
-6. **Detalhe** (`/produto/:slug`): página individual do produto.
-7. **Por categoria** (`/categoria/:slug`): listar produtos de uma categoria.
+> A exibição pública dos produtos (vitrine, detalhe e listagem por categoria) é uma tarefa separada: veja `docs/catalogo.md`.
 
 ## Requisitos técnicos
 
-- Rotas administrativas protegidas (`auth`) e rotas públicas para a loja.
-- Controladores:
-  - `app/Controllers/Admin/Produtos.php` (admin)
-  - `app/Controllers/Produtos.php` (loja pública)
+- Rotas administrativas protegidas (`auth`).
+- Controlador `app/Controllers/Admin/Produtos.php`.
 - Modelo `app/Models/ProdutoModel.php` com joins para categoria.
 - Migração da tabela `produtos` (ver [04-banco-de-dados.md](04-banco-de-dados.md)).
 - Upload de imagem com validação de tipo e tamanho (guarde em `writable/uploads` ou `public/uploads`).
@@ -36,8 +28,7 @@ Implementar o gerenciamento de produtos na área administrativa e a exibição p
 ## Critérios de aceite
 
 - [ ] Admin consegue criar, editar e excluir produtos.
-- [ ] Produto com `ativo = 0` não aparece na vitrine.
-- [ ] URLs de produto usam slug, não id.
+- [ ] Ao criar/editar, o slug é gerado e é único.
 - [ ] Existe busca/filtro na listagem administrativa.
 - [ ] Imagem validada e salva corretamente.
 - [ ] Preço formatado em todos os lugares.
@@ -62,4 +53,5 @@ Implementar o gerenciamento de produtos na área administrativa e a exibição p
 - Base: `docs/00-visao-geral.md`, `docs/02-estrutura-do-projeto.md`
 - Banco: `docs/04-banco-de-dados.md`
 - Categorias: `docs/crud-categorias.md`
+- Catálogo público: `docs/catalogo.md`
 - Autenticação (filtro `auth`): `docs/autenticacao.md`
